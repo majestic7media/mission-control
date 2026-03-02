@@ -10,11 +10,13 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.3.0-blue?style=flat-square" alt="Version" />
+  <img src="https://img.shields.io/github/stars/crshdn/mission-control?style=flat-square" alt="GitHub Stars" />
+  <img src="https://img.shields.io/github/issues/crshdn/mission-control?style=flat-square" alt="GitHub Issues" />
+  <img src="https://img.shields.io/github/license/crshdn/mission-control?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome" />
   <img src="https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js" alt="Next.js" />
   <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/SQLite-3-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite" />
-  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT License" />
 </p>
 
 <p align="center">
@@ -29,16 +31,14 @@
 
 ---
 
-## 🌿 Branch Guide (this repo)
+## 🆕 What's New in v1.3.0
 
-This project contains a few branches for different purposes:
+- **Agent Activity Dashboard** — Dedicated view for monitoring agent work in real-time, with mobile-optimized card layout
+- **Remote Model Discovery** — Discover and select AI models directly from your OpenClaw Gateway (`MODEL_DISCOVERY=true`)
+- **Dispatch Recovery** — Tasks stuck in `pending_dispatch` now auto-reset to planning so you can retry
+- **Planning Spec Forwarding** — Dispatch messages now include the full planning spec and agent instructions
 
-- `main` → **recommended runtime branch** (includes mobile/orientation UX + task auto-promote fix)
-- `feat/mobile-orientation-ux` → mobile-first + portrait/landscape responsive dashboard work
-- `feat/auto-promote-assigned-dispatch` → backend workflow fix for `inbox -> assigned` when assigning an agent
-- `upstream-main` → snapshot of original upstream baseline for easy diff/rebase
-
-If you just want to run the latest stable custom version, use `main`.
+See the full [CHANGELOG](CHANGELOG.md) for details.
 
 ---
 
@@ -592,9 +592,11 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ## 🙏 Acknowledgments
 
-- Powered by [OpenClaw](https://github.com/openclaw/openclaw) — the AI agent runtime
-- Built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), and [SQLite](https://www.sqlite.org/)
-- AI by [Anthropic](https://anthropic.com/), [OpenAI](https://openai.com/), and others
+[![OpenClaw](https://img.shields.io/badge/OpenClaw-Gateway-blue?style=for-the-badge)](https://github.com/open-claw/open-claw-gateway)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![Anthropic](https://img.shields.io/badge/Anthropic-Claude-orange?style=for-the-badge)](https://www.anthropic.com/)
 
 ---
 
