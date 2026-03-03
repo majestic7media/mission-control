@@ -59,9 +59,19 @@ See the full [CHANGELOG](CHANGELOG.md) for details.
 
 🔒 **Security First** — Bearer token auth, HMAC webhooks, Zod validation, path traversal protection, security headers
 
+🛡️ **Privacy First** — No built-in analytics trackers or centralized user-data collection; data stays in your deployment by default
+
 📡 **Live Feed** — Real-time event stream showing agent activity, task updates, and system events
 
 🌐 **Multi-Machine** — Run the dashboard and AI agents on different computers (supports Tailscale for remote)
+
+---
+
+## 🛡️ Privacy
+
+Mission Control is open-source and self-hosted. The project does **not** include ad trackers, third-party analytics beacons, or a centralized data collector run by us.
+
+By default, your task/project data stays in your own deployment (SQLite + workspace). If you connect external services (for example AI providers or remote gateways), only the data you explicitly send to those services leaves your environment and is governed by their policies.
 
 ---
 
