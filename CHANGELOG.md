@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.5.3] - 2026-03-13
+
+### Fixed
+- **Agent Status Stale After Stage Handoff** — When a task moved between pipeline stages (builder → tester → reviewer → done), the previous agent's status remained `working` in the database permanently. Now the workflow engine resets the outgoing agent to `standby` on every stage handoff (unless the agent has other active tasks). The task PATCH endpoint also resets the assigned agent when a task moves to `done`.
+
+---
+
 ## [1.5.2] - 2026-03-13
 
 ### Fixed

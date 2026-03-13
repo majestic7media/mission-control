@@ -38,19 +38,19 @@ https://github.com/user-attachments/assets/76af060c-fdb1-40cb-b575-46c7a807845d
 
 ---
 
-## 🆕 What's New in v1.5.2
+## 🆕 What's New in v1.5.3
 
-- **Dispatch deadlock fix** — Fixed a race condition where a failed OpenClaw WebSocket dispatch left tasks permanently stuck in `in_progress`. The planning poll now detects stale dispatches (no agent activity within 2 minutes) and automatically retries.
-- **Dispatch error recovery** — The dispatch endpoint now resets tasks to `assigned` with a recorded error on delivery failure, instead of silently failing. The UI reflects the error state immediately via broadcast.
+- **Agent status cleanup on stage handoff** — Previous agents are now reset to `standby` when tasks move between pipeline stages or complete. No more permanently stuck `working` badges.
+- **Dispatch deadlock fix** (v1.5.2) — Stale dispatches are detected and retried; failed dispatches reset to `assigned` with error recorded.
 
-### Previous (v1.5.1)
-- Canonical agent catalog sync, dynamic per-task routing, strict stage governance, failure escalation with fixer guarantee, team assignment cleanup, live working/standby badges.
+### Previous
+- v1.5.1: Canonical agent catalog sync, dynamic per-task routing, strict stage governance, failure escalation, live badges.
 
 See the full [CHANGELOG](CHANGELOG.md) for details.
 
 ### Releases
 - GitHub Releases: https://github.com/crshdn/mission-control/releases
-- Latest target: `v1.5.2`
+- Latest target: `v1.5.3`
 
 ---
 ## ✨ Features
