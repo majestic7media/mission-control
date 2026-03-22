@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.2] - 2026-03-21
+
+### Added
+- **Session Key Prefix UI** — Contributed by [@balaji-g42](https://github.com/balaji-g42). Agents now have a configurable `session_key_prefix` field in the Agent Modal, allowing custom OpenClaw session routing per agent. Dynamically created agents inherit the prefix from the workspace's master agent. Planning sessions resolve the prefix with a priority chain: custom request prefix > assigned agent > master agent > default (`agent:main:`). ([PR #85](https://github.com/crshdn/mission-control/pull/85))
+
+### Fixed
+- **Session Key Prefix Sanitization** — Empty or whitespace-only prefix values are stored as `null` so fallback defaults work correctly. Missing trailing colons are auto-appended to prevent malformed session keys (e.g., `agent:mainplanning:` instead of `agent:main:planning:`).
+
+---
+
 ## [2.0.1] - 2026-03-21
 
 ### Added

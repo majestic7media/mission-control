@@ -41,21 +41,20 @@ I highly recommend getting Hetzner VPS to run this. <a href="https://hetzner.clo
 
 ---
 
-## 🚀 What's New in v2.0.1
+## 🚀 What's New in v2.0.2
 
 ### New Features
 
-- **Product Settings Modal** — Gear icon (⚙️) in the product dashboard header. Edit name, description, repo URL, live URL, branch, build mode, and icon inline — no more manual DB updates.
-- **Import README in New Product Wizard** — One-click import of your repo's README.md to pre-populate the Product Program. Works with public repos (GitHub API) and private repos (local filesystem fallback).
-- **Auto-Generate Description** — AI generates a concise product description from your repo README and live site content via the OpenClaw Gateway.
-- **Smarter Private Repo Handling** — Repo validation now explicitly tells users a repo may be private instead of a generic "could not verify" warning.
+- **Session Key Prefix UI** — Agents now have a configurable `session_key_prefix` field in the Agent Modal for custom OpenClaw session routing. Dynamically created agents inherit the prefix from the master agent. ([@balaji-g42](https://github.com/balaji-g42))
+- **Session key sanitization** — Empty prefixes fall back to defaults; missing trailing colons are auto-appended to prevent malformed session keys.
 
-### Stability & Community Contributions
+### v2.0.1 Highlights
 
-- **Dispatch hang fix** — All dispatch calls now have a 30s timeout. Previously, a slow OpenClaw gateway could hang the server indefinitely during stage transitions (testing/review/verification). Failed dispatches also force-reconnect the WebSocket so retries start fresh.
-- **Fresh markdown in Agent Modal** — The modal now fetches live data from the API instead of showing stale store cache.
-- **Pre-migration database backups** — Automatic timestamped backups before migrations using `VACUUM INTO`. Keeps last 5. ([@cgluttrell](https://github.com/cgluttrell))
-- **Migration 013 data guard** — The destructive "fresh start" migration now skips databases with existing data. ([@cgluttrell](https://github.com/cgluttrell))
+- **Product Settings Modal** — Edit product config inline via the gear icon.
+- **Import README / Auto-Generate Description** — One-click README import and AI-generated descriptions in the New Product Wizard.
+- **Dispatch hang fix** — 30s timeout on all dispatch calls; stale WebSocket force-reconnect.
+- **Pre-migration database backups** — Automatic timestamped backups before migrations. ([@cgluttrell](https://github.com/cgluttrell))
+- **Migration 013 data guard** — Destructive migration skips databases with existing data. ([@cgluttrell](https://github.com/cgluttrell))
 - **Static device identity path** — Removes dynamic filesystem path parameter. ([@org4lap](https://github.com/org4lap))
 
 ### v2.0 Highlights
